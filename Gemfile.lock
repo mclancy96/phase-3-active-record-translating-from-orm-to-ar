@@ -19,6 +19,7 @@ GEM
       minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
+    ast (2.4.3)
     base64 (0.3.0)
     benchmark (0.4.1)
     bigdecimal (3.2.3)
@@ -33,6 +34,7 @@ GEM
     database_cleaner-core (2.0.1)
     diff-lcs (1.6.2)
     drb (2.2.3)
+    fiddle (1.1.8)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     json (1.8.6)
@@ -40,10 +42,19 @@ GEM
     method_source (1.1.0)
     minitest (5.25.5)
     ostruct (0.6.3)
+    parallel (1.27.0)
+    parser (3.3.9.0)
+      ast (~> 2.4.1)
+      racc
+    prism (1.5.1)
     pry (0.15.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    racc (1.8.1)
+    rainbow (3.1.1)
     rake (13.3.0)
+    regexp_parser (2.11.3)
+    rexml (3.4.4)
     rspec (3.13.1)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -57,6 +68,21 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.5)
+    rubocop (1.31.0)
+      parallel (~> 1.10)
+      parser (>= 3.1.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.18.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.46.0)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
+    rubocop-rspec (2.12.1)
+      rubocop (~> 1.31)
+    ruby-progressbar (1.13.0)
     securerandom (0.4.1)
     sqlite3 (1.7.3-aarch64-linux)
     sqlite3 (1.7.3-arm-linux)
@@ -67,6 +93,7 @@ GEM
     timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.6.0)
 
 PLATFORMS
   aarch64-linux
@@ -79,12 +106,19 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 7.1)
   database_cleaner
+  fiddle
   json (~> 1.8, >= 1.8.5)
+  logger
   ostruct
   pry
   rake
   rspec
+  rubocop (~> 1.31)
+  rubocop-rspec (~> 2.12)
   sqlite3 (~> 1.6)
+
+RUBY VERSION
+   ruby 3.3.5p100
 
 BUNDLED WITH
    2.7.1
